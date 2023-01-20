@@ -20,6 +20,11 @@ def clear_button():
     value=''
     txt.set(value)
 
+def equal_clicked():
+    global value
+    result= eval(value)
+    txt.set(result)
+    value = ''
 
 
 
@@ -32,7 +37,7 @@ btnC.place(x=0, y=85)
 btndiv = Button(window, text='/', width=11, height=5, activebackground="#B6F7F8", command=lambda: button_click('/'))
 btndiv.place(x=87, y=85)
 
-btnmul = Button(window, text='*', width=11, height=5, activebackground="#B6F7F8", command=lambda: button_click('x'))
+btnmul = Button(window, text='*', width=11, height=5, activebackground="#B6F7F8", command=lambda: button_click('*'))
 btnmul.place(x=174, y=85)
 
 btnsub = Button(window, text='-', width=11, height=5, activebackground="#B6F7F8", command=lambda: button_click('-'))
@@ -74,7 +79,7 @@ btndot.place(x=174, y=429)
 btnadd = Button(window, text='+', width=11, height=11, activebackground="#B6F7F8", command=lambda: button_click('+'))
 btnadd.place(x=261, y=171)
 
-btnequal = Button(window, text='=', width=11, height=11, activebackground="#B6F7F8")
+btnequal = Button(window, text='=', width=11, height=11, activebackground="#B6F7F8", command=lambda : equal_clicked())
 btnequal.place(x=261, y=347)
 
 window.mainloop()  # to keep window active
