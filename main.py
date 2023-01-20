@@ -15,7 +15,10 @@ def button_click(num):
     value = value + str(num)
     txt.set(value)
 
-
+def clear_button():
+    global value
+    value=''
+    txt.set(value)
 
 
 
@@ -23,7 +26,7 @@ def button_click(num):
 entry = Entry(window, textvariable=txt, bg="powderblue", bd=5, width=10,font=("default", 47))
 entry.place(x=0, y=0)
 
-btnC = Button(window, text='C', width=11, height=5, activebackground="#B6F7F8")
+btnC = Button(window, text='C', width=11, height=5, activebackground="#B6F7F8",command=lambda: clear_button())
 btnC.place(x=0, y=85)
 
 btndiv = Button(window, text='/', width=11, height=5, activebackground="#B6F7F8", command=lambda: button_click('/'))
